@@ -1,0 +1,234 @@
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid black;
+
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+ 	border-radius:10px;
+	cursor:pointer;
+ 	color:#ffffff;
+ 	font-family:Arial;
+ 	font-size:19px;
+ 	padding:12px 37px;
+ 	text-decoration:none;
+ 	text-shadow:0px 1px 0px #283966;*/
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.tab.active {
+  background-color: #476e9e;
+}
+
+.tab:hover {
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color:#476e9e;
+}
+
+.tab-content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body{
+  padding:0;
+  margin:0;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  text-align: center;
+}
+
+h1{
+  font-size: 42px;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+}
+
+#activity{
+  font-size: 26px;
+  color: darkblue;
+  font-weight: bold;
+}
+
+.bored-container{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.score-container{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.weather-container{
+  font-size: 20px;
+  font-weight: bold;
+
+  align-items: center;
+  border: 3px solid darkblue;
+  /*width: 200px;
+  height: 300px;
+  border: 3px solid darkblue;
+*/
+
+
+}
+
+.completeButton{
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+ 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+ 	background-color:#7892c2;
+ 	border-radius:10px;
+ 	border:1px solid #4e6096;
+ 	display:inline-block;
+ 	cursor:pointer;
+ 	color:#ffffff;
+ 	font-family:Arial;
+ 	font-size:19px;
+ 	padding:12px 37px;
+ 	text-decoration:none;
+ 	text-shadow:0px 1px 0px #283966;
+}
+
+.completeButton:hover{
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  	background-color:#476e9e;
+}
+
+.completeButton:active {
+	position:relative;
+	top:1px;
+}
+
+.skipButton{
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+ 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+ 	background-color:#7892c2;
+ 	border-radius:10px;
+ 	border:1px solid #4e6096;
+ 	display:inline-block;
+ 	cursor:pointer;
+ 	color:#ffffff;
+ 	font-family:Arial;
+ 	font-size:19px;
+ 	padding:12px 37px;
+ 	text-decoration:none;
+ 	text-shadow:0px 1px 0px #283966;
+}
+
+.skipButton:hover{
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  	background-color:#476e9e;
+}
+
+.skipButton:active {
+	position:relative;
+	top:1px;
+}
+
+.randomWiki{
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+ 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+ 	background-color:#7892c2;
+ 	border-radius:10px;
+ 	border:1px solid #4e6096;
+ 	display:inline-block;
+ 	cursor:pointer;
+ 	color:#ffffff;
+ 	font-family:Arial;
+ 	font-size:19px;
+ 	padding:12px 37px;
+ 	text-decoration:none;
+ 	text-shadow:0px 1px 0px #283966;
+}
+
+.randomWiki:hover{
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  	background-color:#476e9e;
+}
+
+.randomWiki:active {
+	position:relative;
+	top:1px;
+}
+
+.nasa-container{
+  position:relative;
+}
+
+.ttsButton{
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+ 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+ 	background-color:#7892c2;
+ 	border-radius:10px;
+ 	border:1px solid #4e6096;
+ 	display:inline-block;
+ 	cursor:pointer;
+ 	color:#ffffff;
+ 	font-family:Arial;
+ 	font-size:19px;
+ 	padding:12px 37px;
+ 	text-decoration:none;
+ 	text-shadow:0px 1px 0px #283966;
+}
+
+.ttsButton:hover{
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  	background-color:#476e9e;
+}
+
+.ttsButton:active {
+	position:relative;
+	top:1px;
+}
+
+#talk{
+  height: 150px;
+  width: 400px;
+}
+
+.speakNow{
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+ 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+ 	background-color:#7892c2;
+ 	border-radius:10px;
+ 	border:1px solid #4e6096;
+ 	display:inline-block;
+ 	cursor:pointer;
+ 	color:#ffffff;
+ 	font-family:Arial;
+ 	font-size:19px;
+ 	padding:12px 37px;
+ 	text-decoration:none;
+ 	text-shadow:0px 1px 0px #283966;
+}
+
+.speakNow:hover{
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  	background-color:#476e9e;
+}
+
+.speakNow:active {
+	position:relative;
+	top:1px;
+}
+
+#nasaImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
