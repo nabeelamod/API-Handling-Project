@@ -83,11 +83,9 @@ h1{
   height: 300px;
   border: 3px solid darkblue;
 */
-
-
 }
 
-.completeButton{
+.button{
   box-shadow: 0px 0px 0px 2px #9fb4f2;
  	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
  	background-color:#7892c2;
@@ -103,64 +101,12 @@ h1{
  	text-shadow:0px 1px 0px #283966;
 }
 
-.completeButton:hover{
+.button:hover{
   background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
   	background-color:#476e9e;
 }
 
-.completeButton:active {
-	position:relative;
-	top:1px;
-}
-
-.skipButton{
-  box-shadow: 0px 0px 0px 2px #9fb4f2;
- 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
- 	background-color:#7892c2;
- 	border-radius:10px;
- 	border:1px solid #4e6096;
- 	display:inline-block;
- 	cursor:pointer;
- 	color:#ffffff;
- 	font-family:Arial;
- 	font-size:19px;
- 	padding:12px 37px;
- 	text-decoration:none;
- 	text-shadow:0px 1px 0px #283966;
-}
-
-.skipButton:hover{
-  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-  	background-color:#476e9e;
-}
-
-.skipButton:active {
-	position:relative;
-	top:1px;
-}
-
-.randomWiki{
-  box-shadow: 0px 0px 0px 2px #9fb4f2;
- 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
- 	background-color:#7892c2;
- 	border-radius:10px;
- 	border:1px solid #4e6096;
- 	display:inline-block;
- 	cursor:pointer;
- 	color:#ffffff;
- 	font-family:Arial;
- 	font-size:19px;
- 	padding:12px 37px;
- 	text-decoration:none;
- 	text-shadow:0px 1px 0px #283966;
-}
-
-.randomWiki:hover{
-  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-  	background-color:#476e9e;
-}
-
-.randomWiki:active {
+.button:active {
 	position:relative;
 	top:1px;
 }
@@ -169,71 +115,12 @@ h1{
   position:relative;
 }
 
-.ttsButton{
-  box-shadow: 0px 0px 0px 2px #9fb4f2;
- 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
- 	background-color:#7892c2;
- 	border-radius:10px;
- 	border:1px solid #4e6096;
- 	display:inline-block;
- 	cursor:pointer;
- 	color:#ffffff;
- 	font-family:Arial;
- 	font-size:19px;
- 	padding:12px 37px;
- 	text-decoration:none;
- 	text-shadow:0px 1px 0px #283966;
-}
-
-.ttsButton:hover{
-  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-  	background-color:#476e9e;
-}
-
-.ttsButton:active {
-	position:relative;
-	top:1px;
-}
-
 #talk{
   height: 150px;
   width: 400px;
 }
 
-.speakNow{
-  box-shadow: 0px 0px 0px 2px #9fb4f2;
- 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
- 	background-color:#7892c2;
- 	border-radius:10px;
- 	border:1px solid #4e6096;
- 	display:inline-block;
- 	cursor:pointer;
- 	color:#ffffff;
- 	font-family:Arial;
- 	font-size:19px;
- 	padding:12px 37px;
- 	text-decoration:none;
- 	text-shadow:0px 1px 0px #283966;
-}
-
-.speakNow:hover{
-  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-  	background-color:#476e9e;
-}
-
-.speakNow:active {
-	position:relative;
-	top:1px;
-}
-
-#nasaImg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-#nasaImg1 {
+.img {
   display: block;
   margin-left: auto;
   margin-right: auto;

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>API</title>
+  <title>API Implementation</title>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -16,31 +16,30 @@
 
 </head>
 
-<body onload="getActivity();getWeather();getNASA();startTime();getRate();getNASA2()">
+<body onload="getActivity();getNASA();getNASA2()">
       <ul class="tabs">
         <li data-tab-target="#home" class="active tab">Home</li>
         <li data-tab-target="#weather" class="tab">Weather</li>
         <li data-tab-target="#nasa" class="tab">NASA</li>
-        <li data-tab-target="#wiki" class="tab">Random Article</li>
         <li data-tab-target="#tts" class="tab">Text-To-Speech</li>
         <li data-tab-target="#exchange" class="tab">Currency Exchange Rate</li>
+        <li data-tab-target="#wiki" class="tab">Random Article</li>
       </ul>
 
   <div class="tab-content">
     <div id="home" data-tab-content class="active">
       <h1>BORED ACTIVITIES</h1>
-
       <div class="bored-container">
         <p id="activity"></p>
-        <p id="accessibility" "/1">Accessibility: </p>
+        <p id="accessibility">Accessibility: </p>
         <p id="participants">Participants: </p>
         <p id="price">Price: </p>
         <p id="type">Type: </p>
       </div>
 
-      <div class="buttons">
-        <a href="#" class="completeButton" onclick="completeFunction()">Complete</a>
-        <a href="##" class="skipButton" onclick="skipFunction()">Skip</a>
+      <div class="button-container">
+        <a href="#" class="button" onclick="completeFunction()">Complete</a>
+        <a href="#" class="button" onclick="skipFunction()">Skip</a>
       </div>
 
       <div class="score-container">
@@ -49,83 +48,91 @@
         <h3>Tasks Skipped:</h3>
         <p id="skips">0</p>
       </div>
-
     </div>
 
     <div id="weather" data-tab-content>
       <h1>Weather</h1>
-
+      <p>Enter a City:</p>
+      <input id="location" value="Toronto"></input>
+      <br><br>
+      <a href="#" class="button" onclick="getWeather();startTime()">What's The Weather</a>
+      <br><br>
       <div class="weather-container">
+        <p id="currTime"></p>
         <p id="weatherLoc"></p>
-        <div id="txt"></div>
         <img id="weatherIcon" src="">
         <p id="weatherTemp"></p>
         <p id="weatherDesc"></p>
       </div>
-
     </div>
 
     <div id="nasa" data-tab-content>
       <h1>NASA</h1>
-
       <div class="nasa-container">
-        <h2 id="nasaTitle1"></h2>
-        <img id="nasaImg1" src="">
-        <p id="nasaDesc1"></p>
-        <br><br>
-
         <h2 id="nasaTitle"></h2>
         <img id="nasaImg" src="">
         <h3>Description:</h3>
         <h3 id="nasaDesc"></h3>
-        <a href="#" class="ttsButton" onclick="textToSpeechNASA()">Read It To Me!</a>
+        <a href="#" class="button" onclick="textToSpeechNASA()">Read It To Me!</a>
+        <br><br>
+
+        <h2 id="nasaTitle1"></h2>
+        <img class="img" id="nasaImg0" src="">
+        <img class= "img" id="nasaImg1" src="">
+        <img class="img" id="nasaImg2" src="">
+        <img class="img" id="nasaImg3" src="">
+        <img class="img" id="nasaImg4" src="">
+        <img class="img" id="nasaImg5" src="">
+        <img class="img" id="nasaImg6" src="">
+        <img class="img" id="nasaImg7" src="">
+        <img class="img" id="nasaImg8" src="">
+        <img class="img" id="nasaImg9" src="">
+        <p id="nasaDesc1"></p>
       </div>
-
-    </div>
-
-    <div id="wiki" data-tab-content>
-      <h1>Random Wikipedia Article</h1>
-
-      <div class="randomArticle">
-        <a href="https://en.wikipedia.org/wiki/Special:Random" class="randomWiki" target="_blank">Random Wikipedia Article</a>
-      </div>
-
     </div>
 
     <div id="tts" data-tab-content>
       <h1>Text to Speech</h1>
-
-      <div class="TTS">
-        <textarea placeholder="Enter Text..." type="text" id="talk" name="talking"></textarea>
+      <div class="TTS-Container">
+        <textarea placeholder="Enter Text..." type="text" id="talk"></textarea>
         <br><br>
-        <a href="#" class="ttsButton" onclick="textToSpeech()">Read to Me!</a>
+        <a href="#" class="button" onclick="textToSpeech()">Read to Me!</a>
       </div>
-
       <h1>Speech To Text</h1>
-
-      <div class="TTS">
-        <a href="#" class="speakNow" onclick="speechToText()">Speak Now</a>
-        <h2 class="saysomething">Say Something...</h2>
+      <div class="TTS-Container">
+        <a href="#" class="button" id="speakNow" onclick="speechToText()">Speak Now</a>
+        <h2 id="saySomething">Say Something...</h2>
       </div>
-
     </div>
 
     <div id="exchange" data-tab-content>
-      <h1>1 Canadian Dollar is:</h1>
-      <div class="exchangeRate">
+      <h1>Currency Exchange Rates</h1>
+      <p>Enter a Currency (from):</p>
+      <input id="firstCurrency" value="CAD"></input>
+      <!--<p>Enter a Currency (to):</p>-->
+      <!--<input id="secondCurrency" value="USD"></input>-->
+      <br>
+      <h2 id="yourExchangeRate"></h2>
+      <a href="#" class="button" onclick="getRate()">Get Exchange Rate</a>
+      <div class="exchangeRate-Container">
+        <h2>Other Currencies: </h2>
         <h3 id="AUD"></h3>
+        <h3 id="CAD"></h3>
         <h3 id="EUR"></h3>
         <h3 id="GBP"></h3>
         <h3 id="USD"></h3>
         <h3 id="ZAR"></h3>
         <p id="lastUpdated"></p>
       </div>
+    </div>
 
+    <div id="wiki" data-tab-content>
+      <h1>Random Wikipedia Article</h1>
+      <div class="randomArticle">
+        <a href="https://en.wikipedia.org/wiki/Special:Random" class="button" target="_blank">Random Wikipedia Article</a>
+      </div>
     </div>
 
   </div>
-
 </body>
-
-
 </html>
