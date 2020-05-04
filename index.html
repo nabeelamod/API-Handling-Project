@@ -16,14 +16,14 @@
 
 </head>
 
-<body onload="getActivity();getWeather();getNASA();startTime()">
+<body onload="getActivity();getWeather();getNASA();startTime();getRate();getNASA2()">
       <ul class="tabs">
         <li data-tab-target="#home" class="active tab">Home</li>
         <li data-tab-target="#weather" class="tab">Weather</li>
         <li data-tab-target="#nasa" class="tab">NASA</li>
         <li data-tab-target="#wiki" class="tab">Random Article</li>
         <li data-tab-target="#tts" class="tab">Text-To-Speech</li>
-        <li data-tab-target="#dict" class="tab">Dictionary</li>
+        <li data-tab-target="#exchange" class="tab">Currency Exchange Rate</li>
       </ul>
 
   <div class="tab-content">
@@ -69,6 +69,11 @@
       <h1>NASA</h1>
 
       <div class="nasa-container">
+        <h2 id="nasaTitle1"></h2>
+        <img id="nasaImg1" src="">
+        <p id="nasaDesc1"></p>
+        <br><br>
+
         <h2 id="nasaTitle"></h2>
         <img id="nasaImg" src="">
         <h3>Description:</h3>
@@ -105,11 +110,15 @@
 
     </div>
 
-    <div id="dict" data-tab-content>
-      <h1>Dictionary</h1>
-
-      <div class="dictionary">
-        <a href="https://en.wikipedia.org/wiki/Special:Random" class="randomWiki" target="_blank">Random Wikipedia Article</a>
+    <div id="exchange" data-tab-content>
+      <h1>1 Canadian Dollar is:</h1>
+      <div class="exchangeRate">
+        <h3 id="AUD"></h3>
+        <h3 id="EUR"></h3>
+        <h3 id="GBP"></h3>
+        <h3 id="USD"></h3>
+        <h3 id="ZAR"></h3>
+        <p id="lastUpdated"></p>
       </div>
 
     </div>

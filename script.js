@@ -13,7 +13,7 @@ tabs.forEach(tab => {
     tab.classList.add('active')
     target.classList.add('active')
   })
-})
+});
 
 function getNASA(){
   fetch ('https://api.nasa.gov/planetary/apod?api_key=64A1aTcNy0K4VwUM9f7S7sTmR1VgFAKy8ZfpXPVz')
@@ -24,7 +24,24 @@ function getNASA(){
         document.getElementById('nasaDesc').innerHTML = data2.explanation;
         document.getElementById('nasaTitle').innerHTML = data2.title;
   })
-}
+};
+
+function getNASA2(){
+  fetch ('https://api.nasa.gov/EPIC/api/natural?api_key=64A1aTcNy0K4VwUM9f7S7sTmR1VgFAKy8ZfpXPVz')
+    .then (resp1 => resp1.json())
+    .then ((data2) => {
+        console.log(data2);
+        //document.getElementById('nasaImg').src = data2.url;
+        //document.getElementById('nasaDesc').innerHTML = data2.explanation;
+        //var imag = "https://epic.gsfc.nasa.gov/archive/natural/2020/05/02/png/" + data2[0].image + ".png"
+        var imag = data2[0].identifier.substring(0,8);
+        var datee = imag.substring(0,4) + "/" + imag.substring(4,6) + "/" + imag.substring(6,8);
+        var imag1 = "https://epic.gsfc.nasa.gov/archive/natural/" + datee + "/png/" + data2[0].image + ".png"
+        document.getElementById('nasaTitle1').innerHTML = data2[0].caption;
+        document.getElementById('nasaImg1').src = imag1;
+        document.getElementById('nasaDesc1').innerHTML = "Photo Date: " + datee;
+  })
+};
 
 
 function getWeather(){
@@ -43,7 +60,7 @@ function getWeather(){
 
 
   })
-}
+};
 
 function startTime() {
   var today = new Date();
@@ -55,11 +72,12 @@ function startTime() {
   document.getElementById('txt').innerHTML =
   h + ":" + m + ":" + s;
   var t = setTimeout(startTime, 500);
-}
+};
+
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
-}
+};
 
 function getActivity(){
   fetch ('http://www.boredapi.com/api/activity')
@@ -73,7 +91,7 @@ function getActivity(){
         document.getElementById('type').innerHTML = ("Type: " + data.type);
 
   })
-}
+};
 
 var yourscore = 0;
 var total = 0;
@@ -141,5 +159,20 @@ function textToSpeechNASA (text) {
         speech.pitch = 1;
 
         window.speechSynthesis.speak(speech);
+  })
+};
+
+function getRate(){
+  fetch (' https://prime.exchangerate-api.com/v5/3f9a1778918fa566541933c6/latest/CAD')
+    .then (response => response.json())
+    .then ((data) => {
+        console.log(data);
+        document.getElementById('AUD').innerHTML = ("Austrain Dollar: " + data.conversion_rates.AUD);
+        document.getElementById('EUR').innerHTML = ("Euro: " + data.conversion_rates.EUR);
+        document.getElementById('GBP').innerHTML = ("Pound: " + data.conversion_rates.GBP);
+        document.getElementById('USD').innerHTML = ("US Dollar: " + data.conversion_rates.USD);
+        document.getElementById('ZAR').innerHTML = ("South African Rand: " + data.conversion_rates.ZAR);
+        document.getElementById('lastUpdated').innerHTML = ("Last Updated: " + new Date(data.time_last_update*1000));
+
   })
 };
