@@ -154,6 +154,7 @@ function textToSpeechNASA (text) {
 
 function getRate(){
   var enteredCurrency = document.getElementById('firstCurrency').value;
+  var amount = document.getElementById('amount').value;
   var buildURL = 'https://prime.exchangerate-api.com/v5/3f9a1778918fa566541933c6/latest/' + enteredCurrency;
 
   //var otherCurrency = document.getElementById('secondCurrency').value;
@@ -165,12 +166,50 @@ function getRate(){
         console.log(data);
         //document.getElementById('yourExchangeRate').innerHTML = (otherCurrencyVal.value);
         //document.getElementById('yourExchangeRate').innerHTML = otherCurrecyVal
-        document.getElementById('AUD').innerHTML = ("Australian Dollar: " + data.conversion_rates.AUD);
-        document.getElementById('CAD').innerHTML = ("Canadian Dollar: " + data.conversion_rates.CAD);
-        document.getElementById('EUR').innerHTML = ("Euro: " + data.conversion_rates.EUR);
-        document.getElementById('GBP').innerHTML = ("Pound: " + data.conversion_rates.GBP);
-        document.getElementById('USD').innerHTML = ("US Dollar: " + data.conversion_rates.USD);
-        document.getElementById('ZAR').innerHTML = ("South African Rand: " + data.conversion_rates.ZAR);
+        document.getElementById('AUD').innerHTML = ("Australian Dollar: " + (data.conversion_rates.AUD * amount).toFixed(2));
+        document.getElementById('CAD').innerHTML = ("Canadian Dollar: " + (data.conversion_rates.CAD * amount).toFixed(2));
+        document.getElementById('EUR').innerHTML = ("Euro: " + (data.conversion_rates.EUR * amount).toFixed(2));
+        document.getElementById('GBP').innerHTML = ("Pound: " + (data.conversion_rates.GBP * amount).toFixed(2));
+        document.getElementById('USD').innerHTML = ("US Dollar: " + (data.conversion_rates.USD * amount).toFixed(2));
+        document.getElementById('ZAR').innerHTML = ("South African Rand: " + (data.conversion_rates.ZAR * amount).toFixed(2));
         document.getElementById('lastUpdated').innerHTML = ("Last Updated: " + new Date(data.time_last_update*1000));
+  })
+};
+
+function getMovie() {
+  var enteredLoc = document.getElementById('movieName').value;
+  var buildURL = 'http://www.omdbapi.com/?i=tt3896198&apikey=f64da9d4&s=' + enteredLoc;
+
+  fetch (buildURL)
+    .then (resp1 => resp1.json())
+    .then ((data) => {
+        console.log(data);
+        document.getElementById('movieTitle').innerHTML = data.Search[0].Title;
+        document.getElementById('movieImage').src = data.Search[0].Poster;
+        document.getElementById('movieYear').innerHTML = data.Search[0].Year;
+        document.getElementById('movieType').innerHTML = data.Search[0].Type;
+  })
+};
+
+function getRandMovie() {
+  var randNum0 = Math.floor(Math.random()*10);
+  var randNum1 = Math.floor(Math.random()*10);
+  var randNum2 = Math.floor(Math.random()*10);
+  var randNum3 = Math.floor(Math.random()*10);
+  var randNum4 = Math.floor(Math.random()*10);
+  var randNum5 = Math.floor(Math.random()*10);
+
+  var buildURL = 'http://www.omdbapi.com/?i=tt00'+ randNum0.toString() + randNum1.toString() + randNum2.toString() + randNum3.toString() + randNum4.toString() + '&apikey=f64da9d4';
+
+  //document.getElementById('movieYear').innerHTML = randNum;
+
+  fetch (buildURL)
+    .then (resp1 => resp1.json())
+    .then ((data) => {
+        console.log(data);
+        document.getElementById('movieTitle').innerHTML = data.Title;
+        document.getElementById('movieImage').src = data.Poster;
+        document.getElementById('movieYear').innerHTML = data.Year;
+        document.getElementById('movieType').innerHTML = data.Type;
   })
 };

@@ -23,6 +23,7 @@
         <li data-tab-target="#nasa" class="tab">NASA</li>
         <li data-tab-target="#tts" class="tab">Text-To-Speech</li>
         <li data-tab-target="#exchange" class="tab">Currency Exchange Rate</li>
+        <li data-tab-target="#movie" class="tab">TV/Movie</li>
         <li data-tab-target="#wiki" class="tab">Random Article</li>
       </ul>
 
@@ -107,7 +108,8 @@
 
     <div id="exchange" data-tab-content>
       <h1>Currency Exchange Rates</h1>
-      <p>Enter a Currency (from):</p>
+      <p>Enter an Amount and Currency (From):</p>
+      <input id="amount" value="1"></input>
       <input id="firstCurrency" value="CAD"></input>
       <!--<p>Enter a Currency (to):</p>-->
       <!--<input id="secondCurrency" value="USD"></input>-->
@@ -115,7 +117,7 @@
       <h2 id="yourExchangeRate"></h2>
       <a href="#" class="button" onclick="getRate()">Get Exchange Rate</a>
       <div class="exchangeRate-Container">
-        <h2>Other Currencies: </h2>
+        <h2>Currencies (To): </h2>
         <h3 id="AUD"></h3>
         <h3 id="CAD"></h3>
         <h3 id="EUR"></h3>
@@ -130,6 +132,21 @@
       <h1>Random Wikipedia Article</h1>
       <div class="randomArticle">
         <a href="https://en.wikipedia.org/wiki/Special:Random" class="button" target="_blank">Random Wikipedia Article</a>
+      </div>
+    </div>
+
+    <div id="movie" data-tab-content>
+      <h1>Movie/TV Show</h1>
+      <div class="movie-container">
+        <p>Enter a Movie/TV Show Name:</p>
+        <input id="movieName" value="Batman"></input>
+        <br><br>
+        <a href="#" class="button" onclick="getMovie()">Search</a>
+        <a href="#" class="button" onclick="getRandMovie()">Find Random</a>
+        <h3 id="movieTitle"></h3>
+        <img class="img" id="movieImage" src="">
+        <h3 id="movieYear"></h3>
+        <h3 id="movieType"></h3>
       </div>
     </div>
 
